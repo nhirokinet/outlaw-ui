@@ -1,0 +1,101 @@
+header {
+	background-color: black;
+	color: white;
+	padding: 5px;
+}
+
+#title_logo {
+	float: left;
+}
+
+#title_logo h1 {
+	margin: 0px;
+	padding: 5px;
+}
+
+#header_userinfo {
+	float: right;
+	padding: 5px;
+}
+
+#header_userinfo form {
+	display: inline;
+	padding: 5px;
+}
+
+#header_userinfo a {
+	color: white;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	line-height: 150%;
+}
+
+#main {
+	padding: 15px;
+}
+
+footer {
+	background-color: #ccc;
+	padding: 10px;
+}
+
+#headmenu {
+	background-color: #ccc;
+	padding: 8px;
+}
+
+#headmenu a {
+	color: black;
+}
+
+table {
+	border: 1px;
+	text-align: center;	
+	border-collapse: collapse;
+}
+
+table th {
+	padding: 3px;
+	border: 1px solid;
+}
+
+table td {
+	padding: 3px;
+	border: 1px black solid;
+}
+
+pre.source {
+	background-color: #eee;
+	padding: 8px;
+}
+
+tr.accepted_problem {
+	background-color: #dfd;
+}
+
+div.error_message {
+	background-color: #faa;
+	padding: 10px;
+	margin: 5px 0px;
+}
+
+td.td_judge_accept {
+	color: blue;
+}
+
+td.td_judge_fail {
+	color: red;
+}
+
+div.clear {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+	height: 0px;
+}
