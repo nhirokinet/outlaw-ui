@@ -84,6 +84,10 @@ code {
 	font-family: "Consolas", "Menlo", "Courier New", "Menlo", monospace;
 }
 
+textarea {
+	font-family: "Consolas", "Menlo", "Courier New", "Menlo", monospace;
+}
+
 tr.accepted_problem {
 	background-color: #dfd;
 }
