@@ -22,7 +22,8 @@ foreach ($my_submissions as $submit) {
 <tr><th>Problem</th><td><a href="./problem.php?problem_id=<?php disp($submit['problem_id']); ?>"><?php disp($submit['problem_title']); ?></a></td></tr>
 <tr><th>Language</th><td><?php disp($languages_dict[$submit['language']]); ?></td></tr>
 <tr><th>Judge Status</th><td><?php disp($submit['judge_status']); ?></td></tr>
-<tr><th>Execution Time</th><td><?php disp($submit['execution_time']); ?> ms</td></tr>
+<tr><th>Execution Time</th><td><?php disp(number_format($submit['execution_time'])); ?> ms</td></tr>
+<tr><th>Memory Usage</th><td><?php disp(((int)($submit['memory_used_in_kb']) < 0)?'Unknown':number_format($submit['memory_used_in_kb']) . ' kB'); ?></td></tr>
 <tr><th>Submitted At</th><td><?php disp($submit['created_at']); ?></td></tr>
 
 </table>
