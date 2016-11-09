@@ -29,7 +29,7 @@ foreach ($my_submissions as $submit) {
 <h2>Compile Message</h2>
 <pre class="source"><?php disp($submit['error_message']); ?></pre>
 <h2>Source Code</h2>
-<pre class="<?php disp($submit['language']=='osv-java'?'java':'cpp'); ?>"><code><?php disp($submit['source_code']); ?></code></pre>
+<pre class="<?php disp(choose_highlighter_class_name($submit['language'])); ?>"><code><?php disp($submit['source_code']); ?></code></pre>
 <?php
 	}
 }

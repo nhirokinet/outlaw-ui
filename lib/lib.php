@@ -2,8 +2,8 @@
 
 require_once(dirname(__FILE__) . '/../config.php');
 
-$languages_raw  = ['osv-c', 'osv-cpp', 'osv-java'];
-$languages_disp = ['C', 'C++', 'Java'];
+$languages_raw  = ['lxc-c11', 'lxc-cpp11', 'lxc-java8', 'lxc-perl5', 'lxc-php7.0', 'lxc-python2', 'lxc-python3', 'lxc-ruby2.3', 'lxc-scala'];
+$languages_disp = ['C11', 'C++11', 'Java 8', 'Perl 5', 'PHP 7.0', 'Python 2', 'Python 3', 'Ruby 2.3', 'Scala'];
 
 $languages_dict = array();
 for ($i=0; $i<count($languages_raw); ++$i) {
@@ -35,6 +35,29 @@ function json_get($path, $params = array()) {
 
 function escape($in) {
 	return htmlspecialchars($in, ENT_QUOTES, 'UTF-8');
+}
+
+function choose_highlighter_class_name ($lang) {
+	switch ($lang) {
+		case 'lxc-java8':
+			return 'java';
+		case 'lxc-c11':
+		case 'lxc-cpp11':
+			return 'cpp';
+		case 'lxc-perl5':
+			return 'perl';
+		case 'lxc-php7.0':
+			return 'php';
+		case 'lxc-ruby2.3':
+			return 'ruby';
+		case 'lxc-scala':
+			return 'scala';
+		case 'lxc-python2':
+		case 'lxc-python3':
+			return 'python';
+		default:
+			return '';
+	}
 }
 
 function disp($in) {

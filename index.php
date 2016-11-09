@@ -5,14 +5,12 @@ require_once('./parts/header.php');
 $my_submissions=get_user_submissions();
 
 ?>
-<h2>にろきプロコン#1</h2>
+<h2>Judge System for Competitive Programming</h2>
 <?php if ($user !== null) { ?>
-コンテスト開始時刻以降に、上のメニューから「Problems」をクリックすると問題一覧を見ることができます。<br />
-様々な都合上、通常の競技プログラミングと異なる点が多いので、事前に<a href="./rules.php">競技規約</a>を通読いただけますよう、お願い致します。<br />
+Logged in.
 <?php } else { ?>	
-参加するためには<a href="./signup.php">ユーザー登録</a>する必要があります。<br />
-既に登録している場合は<a href="./login.php">ログイン</a>してください。<br />
-様々な都合上、通常の競技プログラミングと異なる点が多いので、事前に<a href="./rules.php">競技規約</a>を通読いただけますよう、お願い致します。<br />
+You need to <a href="./signup.php">sign up</a>.<br />
+If you have already signed up, <a href="./login.php">sign in</a>.<br />
 <?php } ?>
 <?php
 require_once('./parts/footer.php');

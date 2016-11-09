@@ -6,7 +6,9 @@ $my_submissions=get_user_submissions();
 
 ?>
 <h2>Notifications</h2>
-現在特に連絡はありません。
+<ul>
+	<li>No notification yet.</li>
+</ul>
 <?php
 require_once('./parts/footer.php');
 

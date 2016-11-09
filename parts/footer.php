@@ -1,6 +1,6 @@
 </div>
 <footer>
-nhirokinet
+Judge System by nhirokinet
 </footer>
 </body>
 </html>

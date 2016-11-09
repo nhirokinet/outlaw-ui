@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>にろきプロコン#1</title>
+<title>Judge System</title>
 <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
 <header>
 	<div id="title_logo">
-		<h1>にろきプロコン#1</h1>
+		<h1>Judge System</h1>
 	</div>
 	<div id="header_userinfo">
 		<?php if ($user !== null) { ?>

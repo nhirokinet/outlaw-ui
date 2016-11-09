@@ -30,6 +30,7 @@ header {
 body {
 	margin: 0px;
 	padding: 0px;
+	font-family: "Segoe UI", Helvetica, Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 
 body {
@@ -73,6 +74,14 @@ table td {
 pre.source {
 	background-color: #eee;
 	padding: 8px;
+}
+
+pre {
+	font-family: "Consolas", "Menlo", "Courier New", "Menlo", monospace;
+}
+
+code {
+	font-family: "Consolas", "Menlo", "Courier New", "Menlo", monospace;
 }
 
 tr.accepted_problem {
