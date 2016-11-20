@@ -10,6 +10,27 @@ for ($i=0; $i<count($languages_raw); ++$i) {
 	$languages_dict[$languages_raw[$i]] = $languages_disp[$i];
 }
 
+function get_status_html ($status) {
+	switch ($status) {
+		case 'accepted':
+			return '<font color=blue>Accepted</font>';
+		case 'tle':
+			return '<font color=red>Time Limit Exceeded</font>';
+		case 'wrong_answer':
+			return '<font color=red>Wrong Answer</font>';
+		case 'runtime_error':
+			return '<font color=red>Runtime Error</font>';
+		case 'build_fail':
+			return '<font color=red>Build Failed</font>';
+		case 'waiting':
+			return 'Waiting...';
+		case 'judging':
+			return 'Await... Judging...';
+		default:
+			return '<font color=red>'. escape($status) .'</font>';
+	}
+}
+
 function json_get($path, $params = array()) {
 	global $outlaw_url, $outlaw_username, $outlaw_password;
 	

@@ -23,7 +23,7 @@ if (array_key_exists('screen_name', $_POST)) {
 	$screenname = $_POST['screen_name'];
 }
 ?>
-<h2>ログイン</h2>
+<h2>Log in</h2>
 <?php if ($message !== NULL) { ?>
 <div class="error_message"><?php disp($message); ?></div>
 <?php } ?>	

@@ -29,7 +29,9 @@ foreach ($my_submissions as $submit) {
 <td><a href="./view_submission.php?id=<?php disp($submit['id']); ?>"><?php disp($submit['id']); ?></a></td>
 <td><a href="./problem.php?problem_id=<?php disp($submit['problem_id']); ?>"><?php disp($submit['problem_title']); ?></a></td>
 <td><?php disp($languages_dict[$submit['language']]); ?></td>
-<td class="<?php disp($submit['judge_status'] === 'accepted' ? 'td_judge_accept' : (($submit['judge_status'] === 'judging' || $submit['judge_status'] === 'waiting') ? '' : 'td_judge_fail')); ?>"><?php disp($submit['judge_status']); ?></td>
+<td class="<?php disp($submit['judge_status'] === 'accepted' ? 'td_judge_accept' : (($submit['judge_status'] === 'judging' || $submit['judge_status'] === 'waiting') ? '' : 'td_judge_fail')); ?>">
+	<?php echo(get_status_html($submit['judge_status'])); ?>
+</td>
 <?php if ($submit['judge_status'] === 'waiting' || $submit['judge_status'] === 'judging' || $submit['judge_status'] === 'build_fail') { ?>
 <td style="text-align:right; padding-left: 10px; padding-right: 10px;">&nbsp;</td>
 <td style="text-align:right; padding-left: 10px; padding-right: 10px;">&nbsp;</td>

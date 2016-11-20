@@ -19,22 +19,22 @@ if (array_key_exists('screen_name', $_POST)) {
 	}
 }
 ?>
-<h2>ユーザー登録</h2>
+<h2>Sign Up</h2>
 <?php if ($message !== NULL) { ?>
 <div class="error_message"><?php disp($message); ?></div>
 <?php } ?>	
 <form method="POST">
 Username: <input type="text" name="screen_name" value="<?php disp($screenname); ?>" /><br/>
-メールアドレスまたはTwitterアカウント: <input type="text" name="email" value="<?php disp($email); ?>" /><br />
-Twitterアカウントの場合は「@」で始めてください。どちらも書きたくない場合は「none」と記入してください。
+E-mail address: <input type="text" name="email" value="<?php disp($email); ?>" /><br />
+Just write "None" if you do not wish to provide it.
 <br/>
-パスワード: <input type="password" name="password" /><br/>
-パスワード（確認のため再入力）: <input type="password" name="password_confirm" /><br/>
+Password: <input type="password" name="password" /><br/>
+Password (confirmation): <input type="password" name="password_confirm" /><br/>
 
 <br>
-登録すると<a href="./rules.php">競技規約</a>に同意したとみなされます。
+By signing up, you confirm that you agree with the <a href="./rules.php">Terms &amp; Rules</a>.
 <br>
-<input type="submit" value="登録" />
+<input type="submit" value="Sign up" />
 </form>
 <?php
 require_once('./parts/footer.php');

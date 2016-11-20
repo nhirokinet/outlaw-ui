@@ -63,7 +63,7 @@ for ($i=0; $i<count($languages_raw); ++$i) {
 <?php
 }
 ?>
-</select><br />
+</select> <a href="./languages.php?">Announcements for each language</a><br />
 <textarea name="code_to_submit" rows="25" cols="80"><?php if (array_key_exists('code_to_submit', $_POST)) {disp($_POST['code_to_submit']);} ?></textarea><br />
 <input type="submit" value="Send" />
 </form>
