@@ -5,9 +5,18 @@ require_once('./parts/header.php');
 <?php
 $my_submissions=get_user_submissions();
 ?>
-<link rel="stylesheet" href="./vendor/highlight/styles/default.css">
-<script src="./vendor/highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+<script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushScala.js"></script>
+<script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushPerl.js"></script>
+<script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushPython.js"></script>
+<script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushRuby.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./vendor/syntaxhighlighter_3.0.83/styles/shCore.css"></script>
+<link rel="stylesheet" type="text/css" href="./vendor/syntaxhighlighter_3.0.83/styles/shThemeDefault.css"></script>
+
 <?php
 $target_id = (int) $_GET['id'];
 $flag = false;
@@ -30,7 +39,10 @@ foreach ($my_submissions as $submit) {
 <h2>Compile Message</h2>
 <pre class="source"><?php disp($submit['error_message']); ?></pre>
 <h2>Source Code</h2>
-<pre class="<?php disp(choose_highlighter_class_name($submit['language'])); ?>"><code><?php disp($submit['source_code']); ?></code></pre>
+<pre class="brush: <?php disp(choose_highlighter_class_name($submit['language'])); ?>"><?php disp($submit['source_code']); ?></pre>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+</script>
 <?php
 	}
 }
