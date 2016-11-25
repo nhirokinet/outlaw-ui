@@ -14,8 +14,8 @@ $my_submissions=get_user_submissions();
 <script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushPython.js"></script>
 <script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushRuby.js"></script>
 
-<link rel="stylesheet" type="text/css" href="./vendor/syntaxhighlighter_3.0.83/styles/shCore.css"></script>
-<link rel="stylesheet" type="text/css" href="./vendor/syntaxhighlighter_3.0.83/styles/shThemeDefault.css"></script>
+<link rel="stylesheet" type="text/css" href="./vendor/syntaxhighlighter_3.0.83/styles/shCore.css" />
+<link rel="stylesheet" type="text/css" href="./vendor/syntaxhighlighter_3.0.83/styles/shThemeDefault.css" />
 
 <?php
 $target_id = (int) $_GET['id'];
