@@ -2,8 +2,8 @@
 
 require_once(dirname(__FILE__) . '/../config.php');
 
-$languages_raw  = ['lxc-c11', 'lxc-cpp11', 'lxc-java8', 'lxc-perl5', 'lxc-php7.0', 'lxc-python2', 'lxc-python3', 'lxc-ruby2.3', 'lxc-scala'];
-$languages_disp = ['C11', 'C++11', 'Java 8', 'Perl 5', 'PHP 7.0', 'Python 2', 'Python 3', 'Ruby 2.3', 'Scala'];
+$languages_raw  = ['lxc-c11', 'lxc-cpp11', 'lxc-java8', 'lxc-perl5', 'lxc-php7.0', 'lxc-python2', 'lxc-python3', 'lxc-ruby2.3', 'lxc-scala', 'lxc-brainfuck', 'lxc-perl6-rakudostar', 'lxc-npiet-base64'];
+$languages_disp = ['C11', 'C++11', 'Java 8', 'Perl 5', 'PHP 7.0', 'Python 2', 'Python 3', 'Ruby 2.3', 'Scala', 'Brainf*ck', 'Perl 6 (Rakudostar)', 'Piet (npiet, BASE64)'];
 
 $languages_dict = array();
 for ($i=0; $i<count($languages_raw); ++$i) {
@@ -100,7 +100,7 @@ function set_session_id($session_id) {
 }
 
 function login($screen_name, $password) {
-	$ret = json_get('login.php', array('screen_name'=>$screen_name, 'passwd'=>$password));
+	$ret = json_get('/accounts/login.json', array('screen_name'=>$screen_name, 'passwd'=>$password));
 	if ($ret['status'] === 'success') {
 		return $ret;
 	} else {
@@ -109,18 +109,18 @@ function login($screen_name, $password) {
 }
 
 function logout() {
-	$ret = json_get('logout.php', array('session_id'=>get_session_id()));
+	$ret = json_get('/accounts/logout.json', array('session_id'=>get_session_id()));
 	return true;
 }
 
 // return user info if logged in, else NULL
 function whoami() {
-	return json_get('whoami.php?session_id=' . urlencode(get_session_id()));
+	return json_get('/accounts/self/whoami.json?session_id=' . urlencode(get_session_id()));
 }
 
 // submit problem
 function submit_code($problem_id, $language, $source_code) {
-	return json_get('submit_code.php?session_id=' . urlencode(get_session_id()), array('problem_id'=>$problem_id, 'language'=>$language, 'source_code'=>$source_code));
+	return json_get('/submit_code.json?session_id=' . urlencode(get_session_id()), array('problem_id'=>$problem_id, 'language'=>$language, 'source_code'=>$source_code));
 }
 
 function error_display() {
@@ -150,28 +150,28 @@ function signup($screen_name, $password, $email) {
 		return array('message' => 'confirmation of two passwords failed');
 	}
 
-	return json_get('signup.php', array('screen_name'=>$screen_name, 'passwd'=>$password, 'email'=>$email));
+	return json_get('/accounts/signup.json', array('screen_name'=>$screen_name, 'passwd'=>$password, 'email'=>$email));
 }
 
 function get_submissions() {
-	return json_get('get_submissions.php?session_id=' . urlencode(get_session_id()));
+	//return json_get('get_submissions.php?session_id=' . urlencode(get_session_id()));
 }
 
 function get_user_submissions() {
-	return json_get('get_user_submissions.php?session_id=' . urlencode(get_session_id()));
+	return json_get('/accounts/self/submissions.json?session_id=' . urlencode(get_session_id()));
 
 }
 
 function get_problem($problem_id) {
-	return json_get('get_problem.php?id=' . urlencode($problem_id) . '&session_id=' . urlencode(get_session_id()));
+	return json_get('/problems/' . urlencode($problem_id) . '.json?session_id=' . urlencode(get_session_id()));
 }
 
 function get_problems() {
-	return json_get('get_problems.php?session_id=' . urlencode(get_session_id()));
+	return json_get('/problems/list.json?session_id=' . urlencode(get_session_id()));
 }
 
 function get_standings() {
-	return json_get('get_standings.php?session_id=' . urlencode(get_session_id()));
+	return json_get('/standings.json?session_id=' . urlencode(get_session_id()));
 }
 
 $user = whoami();
