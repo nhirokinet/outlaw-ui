@@ -11,6 +11,7 @@ $my_submissions=get_user_submissions();
 <script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushScala.js"></script>
 <script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushPerl.js"></script>
 <script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushPlain.js"></script>
 <script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushPython.js"></script>
 <script type="text/javascript" src="./vendor/syntaxhighlighter_3.0.83/scripts/shBrushRuby.js"></script>
 
@@ -37,7 +38,7 @@ foreach ($my_submissions as $submit) {
 
 </table>
 <h2>Compile Message</h2>
-<pre class="source"><?php disp($submit['error_message']); ?></pre>
+<pre class="brush: plain"><?php disp($submit['error_message']); ?></pre>
 <h2>Source Code</h2>
 <pre class="brush: <?php disp(choose_highlighter_class_name($submit['language'])); ?>"><?php disp($submit['source_code']); ?></pre>
 <script type="text/javascript">

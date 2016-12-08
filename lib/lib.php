@@ -66,6 +66,7 @@ function choose_highlighter_class_name ($lang) {
 		case 'lxc-cpp11':
 			return 'cpp';
 		case 'lxc-perl5':
+		case 'lxc-perl6':
 			return 'perl';
 		case 'lxc-php7.0':
 			return 'php';
@@ -77,7 +78,7 @@ function choose_highlighter_class_name ($lang) {
 		case 'lxc-python3':
 			return 'python';
 		default:
-			return '';
+			return 'plain';
 	}
 }
 
